@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My first Website.</title>
+<meta name="viewport" content="width=device-width, initial-scale= 1.0">
+<style>
+    body{
+     background-color: #e6f7ff;
+    text-align: center;
+    font-family:"Times new roman",sans-serif;
+    }
+    nav{ 
+        padding:20px 60px;
+        display:flex;
+        align-items:center;
+        margin:auto;
+        position:relative;
+        z-index: 10;
+    }
+    nav a{ 
+        margin:15px;
+        text-decoration:none;
+        color:#222;
+    }
+    nav a:hover{ 
+        color:#007BFF;
+    }
+    nav a.active{
+        color:#007BFF;
+        font-weight:bold;
+    }
+    nav h3{
+        font-size:26px;
+        color:#222;
+        margin:0;
+}
+    nav div{
+        display:flex;
+        justify-content:center;
+        flex:1;
+
+    }
+    h1{
+        color:#222;
+        font-size: 48px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        border-left: 5px solid #007BFF;
+        padding-left:15px;
+    }
+    h2{
+        color:#666;
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+    p{
+        margin:20px;
+        font-size:20px;
+        line-height:1.6;
+        color: #444;
+    }
+    .welcome{
+        color: #007BFF;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        text-align:center;
+    }
+    .card {
+        background-color:white;
+        padding: 60px;
+        border-radius: 15px;
+        margin: 40px auto;
+        border: none;
+        box-shadow: 0px 5px 15px rgb(195, 77, 77);
+        width: 80%;
+        max-width: 900px;
+    }
+    .hero{
+        display:flex;
+        align-items:center;
+        gap: 40px;
+     }
+     .about-hero{
+        flex-direction: column;
+        text-align:center;
+     }
+     .intro{
+        text-align: left;
+        flex:1;
+        min-width:450px;
+     }
+     .about-hero .intro{ 
+        text-align:center;
+     }
+     .intro p{
+        max-width:700px;
+     }
+        button{
+            background-color: #007BFF;
+            color: white;
+            padding:14px 28px;
+            border:none;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+        }
+        button:hover{ background-color : darkblue;
+            cursor:pointer;
+            transform: scale(1.05);
+        }
+       .hero img{ 
+            width: 350px;
+            height: 400px;
+            object-fit: cover;
+            border-radius:50%;
+            border: 5px solid #007BFF;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            width: 300px;
+            height:300px;
+        }
+        .about-hero img{
+            width:280px;
+            height: 280px;
+            margin-bottom: 35px;
+        }
+        .about-section h2{
+            color:#007BFF;
+            margin-top:30px;
+            font-size: 30px;
+            margin-top: 45px;
+            margin-bottom: 10px;
+            border-left: 5px solid #007BFF;
+            padding-left: 15px;
+        }
+        .about-section h1{
+            color:#007BFF;
+            font-size: 36px;
+            padding-left:15px;
+            margin-bottom:20px;
+        }
+        @media (max-width:768px){
+            .hero{
+                flex-direction:column;
+            }
+            nav{
+                padding: 15px 10px;
+                flex-direction: column;
+            }
+            nav div{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+            .about-section h1{
+                color:#007bff;
+            }
+            footer{
+                text-align:center;
+                padding:20px;
+            }
+            .mission{
+                font-size: 20px;
+            }
+            .copyright{
+                font-size:14px;
+             }
+             nav{
+                padding:15px 10px;
+                flex-direction:column;
+             }
+             nav div{
+                flex-wrap: wrap;
+                justify-content: center;
+             }
+            }
+        footer{
+            text-align: center;
+            padding: 20px;
+        }
+        .mission{
+            font-size: 20px;
+        }
+        .copyright{ 
+            font-size: 14px;
+        }
+        </style>
+</head>
+<body>
+    <nav> 
+        <h3>Angelus Palata</h3>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Me</a>
+        <a href="projects.html">Project</a>
+        <a href="skills.html"> Skills </a>
+        <a href="contact.html">Contact</a>
+    </div>
+    </nav>
+    <div class="card">
+     <div class="hero about-hero">
+       
+     <img id="about-photo" src="images/profile.JPG" alt="Photo of Angelus Palata">
+     <div class="intro about-section">
+     
+ 
+<h1>Who I am</h1>
+<p>
+    I am a student athlete and aspiring software engineering with passion for technology, continuous learning and creating solutions that make a positive impact on people's lives.
+</p>
+<h2>My story</h2>
+<p>My name is Angelus Palata. I am passionate about technology, software engeneering, and continuous learning. I enjoy building website, solving problems, and creating projects that can make positive impact. My goal is to become a professional software engineer and use technology to help people around the world
+     </p>
+<h2>Why software Engineering </h2> 
+<p>
+    My passion for technology inspired me to study software engineering. I enjoy solving problems, learning new technologies, and creating applications that can make a positive impact on people's lives. My long-term goal is to use technology to help communities around the world, especially in the Democratic Republic of the Congo.
+    </p>
+<h2>Beyond coding </h2>
+<p>
+    Outside of technology, I am a hardworking and competitive person who enjoys challenging myself to improve every day. Sports have taught me discipline, teamwork, leadership and perseverance. I enjoy playing soccer, basketball and football, and I bring determination from sport into future career.
+</p>
+<h2>My goal </h2>
+<p> As I continue my journey, I am committed to growing as a software engineer, building meaningful projects, and developing solutions that can create a lasting impact people's lives.I want to use technology to solve problems and create opportunities around the world.
+    </p>
+
+</div>
+    </div>
+    </div>
+    <footer>
+        <p class="mission"> Building technology to help people</p>
+        <p class="copyright"> ©2026 Angelus Palata.All right reserved </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

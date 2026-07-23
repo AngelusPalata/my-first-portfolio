@@ -1,0 +1,133 @@
+
+     <!DOCTYPE html>
+<html>
+<head>
+    <title>Contact / Angelus Palata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body{
+            background-color:#e6f7ff;
+            text-align:center;
+            font-family:"Times New Roman", sans-serif;
+            margin:0;
+        }
+
+        nav{
+            padding:20px 60px;
+            display:flex;
+            align-items:center;
+            margin:auto;
+        }
+
+        nav h3{
+            font-size:26px;
+            color:#222;
+            margin:0;
+        }
+
+        nav div{
+            display:flex;
+            justify-content:center;
+            flex:1;
+        }
+
+        nav a{
+            margin:15px;
+            text-decoration:none;
+            color:#222;
+        }
+
+        nav a:hover{
+            color:#007BFF;
+        }
+
+        nav a.active{
+            color:#007BFF;
+            font-weight:bold;
+        }
+
+        .card{
+            background:white;
+            width:80%;
+            max-width:900px;
+            margin:40px auto;
+            padding:60px;
+            border-radius:15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-info p{
+            font-size:18px;
+            margin:15px 0;
+            color:#333;
+        }
+
+        .contact-info i{
+            color:#007BFF;
+            margin-right:10px;
+        }
+
+        .contact-btn{
+            display:inline-block;
+            background:#007BFF;
+            color:white;
+            text-decoration:none;
+            padding:12px 30px;
+            border-radius:30px;
+            margin-top:20px;
+            font-weight:bold;
+            transition: background 0.2s ease;
+        }
+
+        .contact-btn:hover{
+            background:#0056b3;
+        }
+
+        @media (max-width: 600px){
+            .card{
+                width:95%;
+                padding:30px;
+            }
+
+            nav{
+                flex-direction:column;
+                padding:20px;
+            }
+
+            nav div{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .contact-info p{
+                font-size:16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h3>Angelus Palata</h3>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+
+    <div class="card">
+        <h1>Get In Touch</h1>
+        <p>Feel free to reach out — I'd love to hear from you.</p>
+
+        <div class="contact-info">
+            <p><i class="fa-solid fa-envelope"></i> angeluspalata20@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> (304) 299-8066</p>
+            <p><i class="fa-solid fa-location-dot"></i> Florida, USA</p>
+            <a href="mailto:angeluspalata20@gmail.com" class="contact-btn">Send Me a Message</a>
+        </div>
+    </div>
+</body>
+</html>

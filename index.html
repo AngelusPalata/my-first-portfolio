@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My first Website.</title>
+<style>
+    body{
+     background-color: #e6f7ff;
+    text-align: center;
+    font-family:"Times new roman",sans-serif;
+    }
+    nav{ 
+        padding:20px 60px;
+        display:flex;
+        align-items:center;
+        margin:auto;
+    }
+    nav a{ 
+        margin:15px;
+        text-decoration:none;
+        color:#222;
+    }
+    nav a:hover{ 
+        color:#007BFF;
+    }
+    nav a.active{
+        color:#007BFF;
+    }
+    nav h3{
+        font-size:26px;
+        color:#222;
+        margin:0;
+}
+    nav div{
+        display:flex;
+        justify-content:center;
+        flex:1;
+
+    }
+    h1{
+        color:#222;
+        font-size: 48px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    h2{
+        color:#666;
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+    p{
+        margin:20px;
+        font-size:20px;
+        line-height:1.6;
+        color: #444;
+    }
+    .welcome{
+        color: #007BFF;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        text-align:center;
+    }
+    .card {
+        background-color:white;
+        padding: 60px;
+        border-radius: 15px;
+        margin: 40px auto;
+        border: none;
+        box-shadow: 0px 5px 15px rgb(195, 77, 77);
+        width: 80%;
+        max-width: 900px;
+    }
+    .hero{
+        display:flex;
+        align-items:center;
+        gap: 40px;
+     }
+     .intro{
+        text-align: left;
+        flex:1;
+        min-width:450px;
+     }
+     .intro p{
+        max-width:500px;
+     }
+        .button{
+            background-color: #007BFF;
+            color: white;
+            padding:14px 28px;
+            border:none;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover{ background-color : darkblue;
+            cursor:pointer;
+            transform: scale(1.05);
+        }
+       .hero img{ 
+            width: 350px;
+            height: 400px;
+            object-fit: cover;
+            border-radius:50%;
+            border: 5px solid #007BFF;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+
+        }
+        @media (max-width:768px){
+            .hero{
+                flex-direction:column;
+            }
+            nav{
+                padding: 15px 10px;
+                flex-direction: column;
+            }
+            nav div{
+                flex-wrap:wrap;
+                justify-content: center;
+            }
+            .hero img{
+                width: 200px;
+                height: 220px;
+            }
+            .intro{
+                min-width:unset;
+                text-align: center;
+            }
+            h1{
+                font-size: 32px;
+            }
+            h2{
+                font-size: 20px;
+            }
+        }
+        footer{
+            text-align: center;
+            padding: 20px;
+        }
+        .mission{
+            font-size: 20px;
+        }
+        .copyright{ 
+            font-size: 14px;
+        }
+
+    
+        </style>
+</head>
+<body>
+    <nav> 
+        <h3 id="logo"> Angelus Palata</h3>
+    <div>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Project</a>
+        <a href="skills.html">skills </a>
+        <a href="contact.html">Contact</a>
+    </div>
+    </nav>
+    <div class="card">
+     <div class="hero">
+       
+     <img src="images/profile.JPG" alt="Photo of Angelus Palata">
+     <div class="intro">
+     <p class="welcome" id="welcome-text">welcome</p>
+ 
+<h1>Angelus palata </h1>
+<h2>Future software Engineer / Web Developer </h2>
+<p>I am Angelus Palata, a student passionate about web development and software engineering. 
+This website is the beginning of my programming journey, where I will share my projects, 
+learn new skills, and continue growing as a future software engineer.</p>
+
+<a href="about.html" class="button">Learn More about Me </a>
+</div>
+    </div>
+    </div>
+    <footer>
+        <p class="mission" >Building technology to help people </p>
+        <p class="copyright"> © 2026 Angelus Palata. All rights reserved. </p>
+         
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
