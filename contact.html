@@ -1,5 +1,4 @@
-
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Contact / Angelus Palata</title>
@@ -54,7 +53,13 @@
             margin:40px auto;
             padding:60px;
             border-radius:15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0px 10px 35px rgba(255, 45, 45, 0.45);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+        }
+
+        .card:hover{
+            box-shadow: 0px 15px 45px rgba(255, 45, 45, 0.6);
+            transform: translateY(-5px);
         }
 
         .contact-info p{
@@ -78,10 +83,82 @@
             margin-top:20px;
             font-weight:bold;
             transition: background 0.2s ease;
+            border:none;
+            cursor:pointer;
+            font-size:16px;
         }
 
         .contact-btn:hover{
             background:#0056b3;
+        }
+        .hamburger{
+            display:none;
+            flex-direction:column;
+            gap:5px;
+            cursor:pointer;
+        }
+        .hamburger span{
+            width:28px;
+            height:3px;
+            background-color:#222;
+            border-radius:2px;
+        }
+        #lang-toggle{
+            background-color:transparent;
+            border:2px solid #007BFF;
+            color:#007BFF;
+            padding:8px 16px;
+            border-radius:8px;
+            font-size:14px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-left:10px;
+            transition:0.3s;
+        }
+        #lang-toggle:hover{
+            background-color:#007BFF;
+            color:white;
+        }
+        .contact-form{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+            margin-top:30px;
+            text-align:left;
+        }
+        .contact-form input,
+        .contact-form textarea{
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+            font-family:inherit;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus{
+            outline:none;
+            border-color:#007BFF;
+        }
+        footer{
+            text-align: center;
+            padding: 20px;
+        }
+        .mission{
+            font-size: 20px;
+        }
+        .copyright{ 
+            font-size: 14px;
+        }
+
+        .scroll-fade{
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scroll-fade.visible{
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @media (max-width: 600px){
@@ -103,31 +180,74 @@
             .contact-info p{
                 font-size:16px;
             }
+            .hamburger{
+                display:flex;
+            }
+            .nav-link{
+                display:none;
+            }
+            .nav-link.show{
+                display:flex;
+                flex-direction:column;
+            }
+            footer{
+                text-align:center;
+                padding:20px;
+            }
+            .mission{
+                font-size: 20px;
+            }
+            .copyright{
+                font-size:14px;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
         <h3>Angelus Palata</h3>
-        <div>
+        <div class="nav-link">
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
             <a href="projects.html">Projects</a>
             <a href="skills.html">Skills</a>
             <a href="contact.html" class="active">Contact</a>
         </div>
+        <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+        <button id="lang-toggle">🇫🇷 FR</button>
     </nav>
 
     <div class="card">
-        <h1>Get In Touch</h1>
-        <p>Feel free to reach out — I'd love to hear from you.</p>
+        <div class="scroll-fade">
+            <h1 data-en="Get In Touch" data-fr="Contactez-moi">Get In Touch</h1>
+            <p data-en="Feel free to reach out — I'd love to hear from you." data-fr="N'hésitez pas à me contacter — j'aimerais avoir de vos nouvelles.">Feel free to reach out — I'd love to hear from you.</p>
+        </div>
 
-        <div class="contact-info">
+        <div class="contact-info scroll-fade">
             <p><i class="fa-solid fa-envelope"></i> angeluspalata20@gmail.com</p>
             <p><i class="fa-solid fa-phone"></i> (304) 299-8066</p>
             <p><i class="fa-solid fa-location-dot"></i> Florida, USA</p>
-            <a href="mailto:angeluspalata20@gmail.com" class="contact-btn">Send Me a Message</a>
+            <a href="mailto:angeluspalata20@gmail.com" class="contact-btn" data-en="Send Me a Message" data-fr="Envoyez-moi un message">Send Me a Message</a>
         </div>
+
+        <form id="contact-form" class="contact-form scroll-fade" action="https://formspree.io/f/xpqvoqpk" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+            <button type="submit" class="contact-btn">Send</button>
+        </form>
+        <p id="form-success" style="display:none; color:#007BFF; font-weight:bold; margin-top:15px;">Thanks! Your message has been sent — I'll get back to you soon.</p>
     </div>
+
+    <footer>
+        <p class="mission">Building technology to help people</p>
+        <p class="copyright">© 2026 Angelus Palata. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

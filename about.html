@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>My first Website.</title>
-<meta name="viewport" content="width=device-width, initial-scale= 1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body{
      background-color: #e6f7ff;
@@ -74,9 +74,14 @@
         border-radius: 15px;
         margin: 40px auto;
         border: none;
-        box-shadow: 0px 5px 15px rgb(195, 77, 77);
+        box-shadow: 0px 10px 35px rgba(255, 45, 45, 0.45);
         width: 80%;
         max-width: 900px;
+        transition: 0.3s;
+    }
+    .card:hover{
+        box-shadow: 0px 15px 45px rgba(255, 45, 45, 0.6);
+        transform: translateY(-5px);
     }
     .hero{
         display:flex;
@@ -113,6 +118,34 @@
             cursor:pointer;
             transform: scale(1.05);
         }
+        .hamburger{
+            display: none;
+            flex-direction: column;
+            gap:5px;
+            cursor:pointer;
+        }
+        .hamburger span { 
+            width: 28px;
+            height:3px;
+            background-color: #222;
+            border-radius:2px;
+        }
+        #lang-toggle{
+            background-color:transparent;
+            border:2px solid #007BFF;
+            color:#007BFF;
+            padding:8px 16px;
+            border-radius:8px;
+            font-size:14px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-left:10px;
+            transition:0.3s;
+        }
+        #lang-toggle:hover{
+            background-color:#007BFF;
+            color:white;
+        }
        .hero img{ 
             width: 350px;
             height: 400px;
@@ -144,6 +177,28 @@
             padding-left:15px;
             margin-bottom:20px;
         }
+        footer{
+            text-align: center;
+            padding: 20px;
+        }
+        .mission{
+            font-size: 20px;
+        }
+        .copyright{ 
+            font-size: 14px;
+        }
+
+        .scroll-fade{
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scroll-fade.visible{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width:768px){
             .hero{
                 flex-direction:column;
@@ -169,37 +224,35 @@
             .copyright{
                 font-size:14px;
              }
-             nav{
-                padding:15px 10px;
-                flex-direction:column;
-             }
-             nav div{
-                flex-wrap: wrap;
-                justify-content: center;
-             }
+            .hamburger{
+                display:flex;
             }
-        footer{
-            text-align: center;
-            padding: 20px;
-        }
-        .mission{
-            font-size: 20px;
-        }
-        .copyright{ 
-            font-size: 14px;
+            .nav-link{
+                display:none;
+            }
+            .nav-link.show{
+                display:flex;
+                flex-direction:column;
+            }
         }
         </style>
 </head>
 <body>
     <nav> 
         <h3>Angelus Palata</h3>
-    <div>
+    <div class="nav-link">
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About Me</a>
         <a href="projects.html">Project</a>
         <a href="skills.html"> Skills </a>
         <a href="contact.html">Contact</a>
     </div>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <button id="lang-toggle"> 🇫🇷 FR</button>
     </nav>
     <div class="card">
      <div class="hero about-hero">
@@ -208,32 +261,49 @@
      <div class="intro about-section">
      
  
-<h1>Who I am</h1>
-<p>
-    I am a student athlete and aspiring software engineering with passion for technology, continuous learning and creating solutions that make a positive impact on people's lives.
+<div class="scroll-fade">
+<h1 data-en="Who I am" data-fr="Qui je suis">Who I am</h1>
+<p data-en="I am a student athlete and aspiring software engineer with passion for technology, continuous learning and creating solutions that make a positive impact on people's lives." data-fr="Je suis un étudiant-athlète et aspirant ingénieur logiciel, passionné par la technologie, l'apprentissage continu et la création de solutions qui ont un impact positif sur la vie des gens.">
+    I am a student athlete and aspiring software engineer with passion for technology, continuous learning and creating solutions that make a positive impact on people's lives.
 </p>
-<h2>My story</h2>
-<p>My name is Angelus Palata. I am passionate about technology, software engeneering, and continuous learning. I enjoy building website, solving problems, and creating projects that can make positive impact. My goal is to become a professional software engineer and use technology to help people around the world
-     </p>
-<h2>Why software Engineering </h2> 
-<p>
-    My passion for technology inspired me to study software engineering. I enjoy solving problems, learning new technologies, and creating applications that can make a positive impact on people's lives. My long-term goal is to use technology to help communities around the world, especially in the Democratic Republic of the Congo.
-    </p>
-<h2>Beyond coding </h2>
-<p>
-    Outside of technology, I am a hardworking and competitive person who enjoys challenging myself to improve every day. Sports have taught me discipline, teamwork, leadership and perseverance. I enjoy playing soccer, basketball and football, and I bring determination from sport into future career.
-</p>
-<h2>My goal </h2>
-<p> As I continue my journey, I am committed to growing as a software engineer, building meaningful projects, and developing solutions that can create a lasting impact people's lives.I want to use technology to solve problems and create opportunities around the world.
-    </p>
-
 </div>
+
+<div class="scroll-fade">
+<h2 data-en="My story" data-fr="Mon histoire">My story</h2>
+<p data-en="My name is Angelus Palata. I am passionate about technology, software engineering, and continuous learning. I enjoy building website, solving problems, and creating projects that can make positive impact. My goal is to become a professional software engineer and use technology to help people around the world" data-fr="Je m'appelle Angelus Palata. Je suis passionné par la technologie, le génie logiciel et l'apprentissage continu. J'aime créer des sites web, résoudre des problèmes et créer des projets qui ont un impact positif. Mon objectif est de devenir ingénieur logiciel professionnel et d'utiliser la technologie pour aider les gens autour du monde">My name is Angelus Palata. I am passionate about technology, software engineering, and continuous learning. I enjoy building website, solving problems, and creating projects that can make positive impact. My goal is to become a professional software engineer and use technology to help people around the world
+     </p>
+</div>
+
+<div class="scroll-fade">
+<h2 data-en="Why Software Engineering" data-fr="Pourquoi le génie logiciel">Why Software Engineering</h2>
+<p data-en="My passion for technology inspired me to study software engineering. I enjoy solving problems, learning new technologies, and creating applications that can have a positive impact on people's lives. My long-term goal is to use technology to help communities around the world, especially in the DRC." data-fr="Ma passion pour la technologie m'a inspiré à étudier le génie logiciel. J'aime résoudre des problèmes, apprendre de nouvelles technologies et créer des applications qui ont un impact positif sur la vie des gens. Mon objectif à long terme est d'utiliser la technologie pour aider les communautés à travers le monde, en particulier en RDC.">
+    My passion for technology inspired me to study software engineering. I enjoy solving problems, learning new technologies, and creating applications that can have a positive impact on people's lives. My long-term goal is to use technology to help communities around the world, especially in the DRC.
+</p>
+</div>
+
+<div class="scroll-fade">
+<h2 data-en="Beyond Coding" data-fr="Au-delà du code">Beyond Coding</h2>
+<p data-en="Outside of technology, I am a hardworking and competitive person who enjoys challenging myself to improve every day. Sports have taught me discipline, teamwork, leadership, and perseverance. I enjoy playing soccer, basketball, and football, and I bring that same determination from sports into my future career." data-fr="En dehors de la technologie, je suis une personne travailleuse et compétitive qui aime se dépasser chaque jour. Le sport m'a appris la discipline, le travail d'équipe, le leadership et la persévérance. J'aime jouer au soccer, au basketball et au football, et j'apporte cette même détermination du sport à ma future carrière.">
+    Outside of technology, I am a hardworking and competitive person who enjoys challenging myself to improve every day. Sports have taught me discipline, teamwork, leadership, and perseverance. I enjoy playing soccer, basketball, and football, and I bring that same determination from sports into my future career.
+</p>
+</div>
+
+<div class="scroll-fade">
+<h2 data-en="My Goal" data-fr="Mon objectif">My Goal</h2>
+<p data-en="As I continue my journey, I am committed to growing as a software engineer, building meaningful projects, and developing solutions that create a lasting impact in people's lives. I want to use technology to solve problems and create opportunities around the world." data-fr="Alors que je poursuis mon parcours, je suis déterminé à évoluer en tant qu'ingénieur logiciel, à construire des projets significatifs et à développer des solutions qui créent un impact durable dans la vie des gens. Je veux utiliser la technologie pour résoudre des problèmes et créer des opportunités à travers le monde.">
+    As I continue my journey, I am committed to growing as a software engineer, building meaningful projects, and developing solutions that create a lasting impact in people's lives. I want to use technology to solve problems and create opportunities around the world.
+</p>
+</div>
+
+     </div>
     </div>
     </div>
+
     <footer>
-        <p class="mission"> Building technology to help people</p>
-        <p class="copyright"> ©2026 Angelus Palata.All right reserved </p>
+        <p class="mission">Building technology to help people</p>
+        <p class="copyright">© 2026 Angelus Palata. All rights reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

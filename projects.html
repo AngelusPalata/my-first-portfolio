@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Project / Angelus Palata.</title>
-<meta name=" viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <style>
     body{
      background-color: #e6f7ff;
@@ -72,9 +72,14 @@
         border-radius: 15px;
         margin: 40px auto;
         border: none;
-        box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+        box-shadow: 0px 10px 35px rgba(255, 45, 45, 0.45);
         width: 90%;
         max-width: 900px;
+        transition: 0.3s;
+    }
+    .card:hover{
+        box-shadow: 0px 15px 45px rgba(255, 45, 45, 0.6);
+        transform: translateY(-5px);
     }
     .hero{
         display:flex;
@@ -107,6 +112,34 @@
             cursor:pointer;
             transform: scale(1.1);
         }
+        .hamburger{
+            display:none;
+            flex-direction:column;
+            gap:5px;
+            cursor:pointer;
+}
+        .hamburger span{
+            width:28px;
+            height:3px;
+            background-color:#222;
+            border-radius:2px;
+}
+        #lang-toggle{
+            background-color:transparent;
+            border:2px solid #007BFF;
+            color:#007BFF;
+            padding:8px 16px;
+            border-radius:8px;
+            font-size:14px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-left:10px;
+            transition:0.3s;
+        }
+        #lang-toggle:hover{
+            background-color:#007BFF;
+            color:white;
+        }
        .hero img{ 
             width: 350px;
             height: 400px;
@@ -132,6 +165,16 @@
         nav{
             flex-direction:column;
         }
+        .hamburger{
+    display:flex;
+}
+.nav-link{
+    display:none;
+}
+.nav-link.show{
+    display:flex;
+    flex-direction:column;
+}
     }
         footer{
             text-align: center;
@@ -183,6 +226,16 @@
             color: #555;
             text-align: center;
         }
+        .scroll-fade{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-fade.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
 
     
         </style>
@@ -190,13 +243,19 @@
 <body>
     <nav> 
         <h3>Angelus Palata</h3>
-    <div>
+    <div class="nav-link">
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="projects.html" class="active">Projects</a>
         <a href="skills.html">skills</a>
         <a href="contact.html">Contact</a>
     </div>
+<div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <button id="lang-toggle"> 🇫🇷 FR</button>
     </nav>
     <main class="card">
      <section class="hero">
@@ -204,24 +263,24 @@
      
      <div class="intro">
  
-<h1> Projects I've Built </h1>
+<h1 data-en="Projects I've Built" data-fr="Projets que j'ai réalisés"> Projects I've Built </h1>
 
-<p>A collection of projects that showcase my skills, learning journey, and passion for building with technology.
+<p data-en="A collection of projects that showcase my skills, learning journey, and passion for building with technology." data-fr="Une collection de projets qui montrent mes compétences, mon parcours d'apprentissage et ma passion pour la création avec la technologie.">A collection of projects that showcase my skills, learning journey, and passion for building with technology.
     </p> 
-<div class="project-card">
-    <span class="badge">In progress</span>
+<div class="project-card scroll-fade">
+    <span class="badge" data-en="In progress" data-fr="En cours">In progress</span>
     <img src="images/portfolio.png" alt="Portfolio Website">
-    <h2>
+    <h2 data-en="Personal Portfolio website" data-fr="Site portfolio personnel">
         Personal Portfolio website 
         </h2>
 
-    <p class="description"> My first portfolio website built with HTML and CSS
+    <p class="description" data-en="My first portfolio website built with HTML and CSS" data-fr="Mon premier site portfolio construit avec HTML et CSS"> My first portfolio website built with HTML and CSS
 </p>
     <div class="tech">
         HTML•CSS•VS Code
 
 </div>
-<a href="#" class="button">View Project</a>
+<a href="#" class="button" data-en="View Project" data-fr="Voir le projet">View Project</a>
     </div>
 
 </div>
@@ -232,6 +291,6 @@
         <p class="copyright"> © 2026 Angelus Palata. All rights reserved. </p>
          
     </footer>
-    <script src="script.js"> </script>
+    <script src="script.js"></script>
 </body>
 </html>

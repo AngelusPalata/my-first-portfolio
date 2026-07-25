@@ -53,7 +53,13 @@
             margin:40px auto;
             padding:60px;
             border-radius:15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0px 10px 35px rgba(255, 45, 45, 0.45);
+            transition: 0.3s;
+        }
+
+        .card:hover{
+            box-shadow: 0px 15px 45px rgba(255, 45, 45, 0.6);
+            transform: translateY(-5px);
         }
 
         .skills-container{
@@ -76,58 +82,140 @@
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.12);
         }
+        .hamburger{
+            display:none;
+            flex-direction:column;
+            gap:5px;
+            cursor:pointer;
+        }
+        .hamburger span{
+            width:28px;
+            height:3px;
+            background-color:#222;
+            border-radius:2px;
+        }
+        #lang-toggle{
+            background-color:transparent;
+            border:2px solid #007BFF;
+            color:#007BFF;
+            padding:8px 16px;
+            border-radius:8px;
+            font-size:14px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-left:10px;
+            transition:0.3s;
+        }
+        #lang-toggle:hover{
+            background-color:#007BFF;
+            color:white;
+        }
+        footer{
+            text-align: center;
+            padding: 20px;
+        }
+        .mission{
+            font-size: 20px;
+        }
+        .copyright{ 
+            font-size: 14px;
+        }
+
+        .scroll-fade{
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scroll-fade.visible{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width:768px){
-    nav{
-        padding:15px 10px;
-        flex-direction:column;
-    }
-    nav div{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-    .card{
-        padding:25px;
-        width:90%;
-    }
-}
+            nav{
+                padding:15px 10px;
+                flex-direction:column;
+            }
+            nav div{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+            .card{
+                padding:25px;
+                width:90%;
+            }
+            .hamburger{
+                display:flex;
+            }
+            .nav-link{
+                display:none;
+            }
+            .nav-link.show{
+                display:flex;
+                flex-direction:column;
+            }
+            footer{
+                text-align:center;
+                padding:20px;
+            }
+            .mission{
+                font-size: 20px;
+            }
+            .copyright{
+                font-size:14px;
+            }
+        }
     </style>
 </head>
 <body>
     <nav>
         <h3>Angelus Palata</h3>
-        <div>
+        <div class="nav-link">
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
             <a href="projects.html">Projects</a>
             <a href="skills.html" class="active">Skills</a>
             <a href="contact.html"> Contact</a>
         </div>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <button id="lang-toggle">🇫🇷 FR</button>
     </nav>
 
     <div class="card">
-        <h1>My Skills</h1>
-        <p>Technologies and tools I use to build projects.</p>
+        <h1 data-en="My Skills" data-fr="Mes compétences">My Skills</h1>
+        <p data-en="Technologies and tools I use to build projects." data-fr="Technologies et outils que j'utilise pour créer des projets.">Technologies and tools I use to build projects.</p>
 
         <div class="skills-container">
-            <div class="skill-card">
+            <div class="skill-card scroll-fade">
                 <i class="fa-brands fa-html5" style="font-size:40px; color:#e34c26;"></i>
                 <h3>HTML</h3>
-                <p>Building the structure of web pages.</p>
+                <p data-en="Building the structure of web pages." data-fr="Construire la structure des pages web.">Building the structure of web pages.</p>
             </div>
 
-            <div class="skill-card">
+            <div class="skill-card scroll-fade">
                 <i class="fa-brands fa-css3-alt" style="font-size:40px; color:#264de4;"></i>
                 <h3>CSS</h3>
-                <p>Designing responsive and modern websites.</p>
+                <p data-en="Designing responsive and modern websites." data-fr="Concevoir des sites web modernes et responsives.">Designing responsive and modern websites.</p>
             </div>
 
-            <div class="skill-card">
+            <div class="skill-card scroll-fade">
                 <i class="fa-brands fa-js" style="font-size:40px; color:#f0db4f;"></i>
                 <h3>JavaScript</h3>
-                <p>Learning to make websites interactive.</p>
+                <p data-en="Learning to make websites interactive." data-fr="Apprendre à rendre les sites web interactifs.">Learning to make websites interactive.</p>
             </div>
         </div>
     </div>
-    <script src="script.js"> </script>
+
+    <footer>
+        <p class="mission">Building technology to help people</p>
+        <p class="copyright">© 2026 Angelus Palata. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

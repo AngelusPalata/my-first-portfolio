@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>My first Website.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body{
      background-color: #e6f7ff;
@@ -63,15 +64,20 @@
         text-align:center;
     }
     .card {
-        background-color:white;
-        padding: 60px;
-        border-radius: 15px;
-        margin: 40px auto;
-        border: none;
-        box-shadow: 0px 5px 15px rgb(195, 77, 77);
-        width: 80%;
-        max-width: 900px;
-    }
+    background-color:white;
+    padding: 60px;
+    border-radius: 15px;
+    margin: 40px auto;
+    border: none;
+    box-shadow: 0px 10px 35px rgba(255, 45, 45, 0.45);
+    width: 80%;
+    max-width: 900px;
+    transition: 0.3s;
+}
+.card:hover{
+    box-shadow: 0px 15px 45px rgba(255, 45, 45, 0.6);
+    transform: translateY(-5px);
+}
     .hero{
         display:flex;
         align-items:center;
@@ -101,6 +107,34 @@
         .button:hover{ background-color : darkblue;
             cursor:pointer;
             transform: scale(1.05);
+        }
+        .hamburger{
+            display: none;
+            flex-direction: column;
+            gap:5px;
+            cursor:pointer;
+        }
+        .hamburger span { 
+            width: 28px;
+            height:3px;
+            background-color: #222;
+            border-radius:2px;
+        }
+        #lang-toggle{
+            background-color:transparent;
+            border:2px solid #007BFF;
+            color:#007BFF;
+            padding:8px 16px;
+            border-radius:8px;
+            font-size:14px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-left:10px;
+            transition:0.3s;
+        }
+        #lang-toggle:hover{
+            background-color:#007BFF;
+            color:white;
         }
        .hero img{ 
             width: 350px;
@@ -138,6 +172,16 @@
             h2{
                 font-size: 20px;
             }
+            .hamburger{
+                display:flex;
+            }
+            .nav-link{
+                display:none;
+            }
+            .nav-link.show{
+                display:flex;
+                flex-direction:column;
+            }
         }
         footer{
             text-align: center;
@@ -149,35 +193,49 @@
         .copyright{ 
             font-size: 14px;
         }
+        .scroll-fade{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
 
-    
+.scroll-fade.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
         </style>
 </head>
 <body>
     <nav> 
         <h3 id="logo"> Angelus Palata</h3>
-    <div>
+    <div class="nav-link"> 
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About Me</a>
         <a href="projects.html">Project</a>
         <a href="skills.html">skills </a>
         <a href="contact.html">Contact</a>
     </div>
+    <div class = "hamburger"> 
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <button id="lang-toggle"> 🇫🇷 FR</button>
     </nav>
     <div class="card">
      <div class="hero">
        
      <img src="images/profile.JPG" alt="Photo of Angelus Palata">
-     <div class="intro">
-     <p class="welcome" id="welcome-text">welcome</p>
+     <div class="intro scroll-fade">
+     <p class="welcome" id="welcome-text" data-en="welcome" data-fr="bienvenue">welcome</p>
  
 <h1>Angelus palata </h1>
-<h2>Future software Engineer / Web Developer </h2>
-<p>I am Angelus Palata, a student passionate about web development and software engineering. 
+<h2 id="tagline" data-en="Future software Engineer / Web Developer" data-fr="Futur ingénieur logiciel / Développeur web">Future software Engineer / Web Developer</h2>
+<p id="intro-text" data-en="I am Angelus Palata, a student passionate about web development and software engineering. This website is the beginning of my programming journey, where I will share my projects, learn new skills, and continue growing as a future software engineer." data-fr="Je suis Angelus Palata, un étudiant passionné par le développement web et le génie logiciel. Ce site web est le début de mon parcours en programmation, où je partagerai mes projets, apprendrai de nouvelles compétences et continuerai à grandir en tant que futur ingénieur logiciel.">I am Angelus Palata, a student passionate about web development and software engineering. 
 This website is the beginning of my programming journey, where I will share my projects, 
 learn new skills, and continue growing as a future software engineer.</p>
 
-<a href="about.html" class="button">Learn More about Me </a>
+<a href="about.html" class="button" id="cta-button" data-en="Learn More about Me" data-fr="En savoir plus sur moi">Learn More about Me </a>
 </div>
     </div>
     </div>
@@ -186,6 +244,7 @@ learn new skills, and continue growing as a future software engineer.</p>
         <p class="copyright"> © 2026 Angelus Palata. All rights reserved. </p>
          
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
